@@ -1,1 +1,27 @@
-<p>demo works!</p>
+<input type="text" [(ngModel)]="power">
+<strong>PIPE EXPONENCIAL {{power | exponential}}</strong>
+
+<h1>Uso de ngSwitch <small><a href="https://platzi.com/clases/angular/">(Curso de Angular)</a></small></h1>
+<strong>Introduce una el nombre de un animal o fruta, o bien el tipo:</strong>
+<input type="text" [(ngModel)]="itemp">
+<div [ngSwitch]="itemp">
+    <ul *ngSwitchCase="'animal'">
+        <li><strong>Buscaste {{itemp}} 🙊</strong></li>
+        <li *ngFor="let i of typeSearch()"> {{i.label}}</li>
+    </ul>
+    <ul *ngSwitchCase="'fruta'">
+        <li><strong>Buscaste {{itemp}} 🥝</strong></li>
+        <li *ngFor="let i of typeSearch()"> {{i.label}}</li>
+    </ul>
+    <ul *ngSwitchCase="'*'">
+        <li><strong>Lista Completa (usando *)</strong></li>
+        <li *ngFor="let i of items"> {{i.label}}</li>
+    </ul>
+    <ul *ngSwitchDefault>
+        <ul *ngSwitchCase="'fruta'">
+            <li><strong>Buscaste por nombre</strong></li>
+            <li *ngFor="let i of regxTag()"> {{i.label}}</li>
+        </ul>
+
+    </ul>
+</div>
