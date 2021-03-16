@@ -8,6 +8,7 @@ import { Product } from './product.model'
 })
 export class AppComponent {
   itemp = '*';
+  power = 1;
   items = [
     { "id": "", "label": "Perro 🐶", "type": "animal" },
     { "id": "", "label": "Gato 🐱", "type": "animal" },
